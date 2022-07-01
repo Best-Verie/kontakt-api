@@ -24,5 +24,70 @@
     ],
     "produces": [
         "application/json"
-    ]
+    ],
+
+    "paths":{
+        "/contact":{
+            "get":{
+                "tags":["contact"],
+                "summary":"Get all contacts",
+                "description":"Get all contacts",
+                "responses":{
+                    "200":{
+                        "description":"OK",
+                        "schema":{
+                            "type":"array",
+                            "items":{
+                                "$ref":"#/definitions/Contact"
+                            }
+                        }
+                    }
+                    }
+                },
+            "post":{
+                "tags":["contact"],
+                "summary":"Create a contact",
+                "description":"Create a contact",
+                "consumes":["application/json"],
+                "produces":["application/json"],
+                "parameters":[
+                    {
+                        "name":"body",
+                        "in":"body",
+                        "description":"Contact",
+                        "required":true,
+                        "schema":{
+                            "$ref":"#/definitions/Contact"
+                        }
+                    }
+                ],
+                "responses":{
+                    "200":{
+                        "description":"OK",
+                        "schema":{
+                            "$ref":"#/definitions/Contact"
+                        }
+                    }
+                }
+            }
+            }
+        },
+        "definitions":{
+            "Contact":{
+                "type":"object",
+                "properties":{
+                    "id":{
+                        "type":"integer",
+                        "format":"int64"
+                    },
+                    "name":{
+                        "type":"string"
+                    },
+                    "email":{
+                        "type":"string"
+                    }
+                    
+                }
+            }
+        }
 }
