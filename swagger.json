@@ -1,0 +1,28 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "version": "1.0.0",
+        "title":"Contact API",
+        "description": "Contact API",
+        "license":{
+            "name":"MIT"
+        }
+    },
+    "host": "localhost:5000",
+    "basePath": "/",
+    "tags":[
+        {
+            "name":"Contact",
+            "description":"Contact API"
+        }
+    ],
+    "schemes": [
+        "http"
+    ],
+    "consumes": [
+        "application/json"
+    ],
+    "produces": [
+        "application/json"
+    ]
+}
